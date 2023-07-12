@@ -1,0 +1,31 @@
+ExampleName: Coord
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: Sing
+
+        Participants:
+          - Obligatory: Subject, Attribute1, Attribute2, Coordination
+
+        Items:
+          - E: Attribute1
+            Morph: ADJ, Number=Sing
+          - F: Attribute2
+            Morph: ADJ, Number=Sing
+          - G: Coordination
+            LexNonHead: и 
+          - D: Subject
+            ConstituentType: NP
+            Morph: Case=Nom, Number=Sing
+          - C: Key
+            ConstituentType: VP
+            Morph: VERB, Number=Plur
+
+        Links: 
+          - C, D: nsubj
+          - D, E: amod
+          - E, F: any
+          - F, G: cc
+

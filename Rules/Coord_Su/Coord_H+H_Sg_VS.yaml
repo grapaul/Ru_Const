@@ -1,0 +1,307 @@
+ExampleName: Coord_SG_post
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: MF_1
+
+        Participants:
+          - Obligatory: Coor,Noun1, Pred
+
+        Items:
+          - E: Noun1
+            Morph: Number=Sing, Gender=Masc
+            ConstituentType: NP
+          - F: Dummy
+            Morph: Number=Sing, Gender=Fem
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, Number=Sing, Gender=Masc
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: nsubj
+
+        Constraints:
+          - Order: B, E
+
+
+    - SubExample:
+        Name: MF_2
+
+        Participants:
+          - Obligatory: Coor,Noun1, Pred
+
+        Items:
+          - E: Noun1
+            Morph: Number=Sing, Gender=Masc
+            ConstituentType: NP
+          - F: Dummy
+            Morph: Number=Sing, Gender=Fem
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, Number=Sing, Gender=Fem
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: nsubj
+
+        Constraints:
+          - Order: B, E
+
+    - SubExample:
+        Name: FM_1
+
+        Participants:
+          - Obligatory: Coor,Noun1, Pred
+
+        Items:
+          - E: Noun1
+            Morph: Number=Sing, Gender=Fem
+            ConstituentType: NP
+          - F: Dummy
+            Morph: Number=Sing, Gender=Masc
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, Number=Sing, Gender=Fem
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: nsubj
+
+        Constraints:
+          - Order: B, E
+
+    - SubExample:
+        Name: FM_2
+
+        Participants:
+          - Obligatory: Coor,Noun1, Pred
+
+        Items:
+          - E: Noun1
+            Morph: Number=Sing, Gender=Fem
+            ConstituentType: NP
+          - F: Dummy
+            Morph: Number=Sing, Gender=Masc
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, Number=Sing, Gender=Masc
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: nsubj
+
+        Constraints:
+          - Order: B, E
+
+    - SubExample:
+        Name: NM_1
+
+        Participants:
+          - Obligatory: Coor,Noun1, Pred
+
+        Items:
+          - E: Noun1
+            Morph: Number=Sing, Gender=Neut
+            ConstituentType: NP
+          - F: Dummy
+            Morph: Number=Sing, Gender=Masc
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, Number=Sing, Gender=Neut
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: nsubj
+
+        Constraints:
+          - Order: B, E
+
+
+    - SubExample:
+        Name: NM_2
+
+        Participants:
+          - Obligatory: Coor,Noun1, Pred
+
+        Items:
+          - E: Noun1
+            Morph: Number=Sing, Gender=Neut
+            ConstituentType: NP
+          - F: Dummy
+            Morph: Number=Sing, Gender=Masc
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, Number=Sing, Gender=Masc
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: nsubj
+
+        Constraints:
+          - Order: B, E
+
+
+    - SubExample:
+        Name: MN_1
+
+        Participants:
+          - Obligatory: Coor,Noun1, Pred
+
+        Items:
+          - E: Noun1
+            Morph: Number=Sing, Gender=Masc
+            ConstituentType: NP
+          - F: Dummy
+            Morph: Number=Sing, Gender=Neut
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, Number=Sing, Gender=Masc
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: nsubj
+
+        Constraints:
+          - Order: B, E
+
+    - SubExample:
+        Name: MN_2
+
+        Participants:
+          - Obligatory: Coor,Noun1, Pred
+
+        Items:
+          - E: Noun1
+            Morph: Number=Sing, Gender=Masc
+            ConstituentType: NP
+          - F: Dummy
+            Morph: Number=Sing, Gender=Neut
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, Number=Sing, Gender=Neut
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: nsubj
+
+        Constraints:
+          - Order: B, E
+
+    - SubExample:
+        Name: FN_1
+
+        Participants:
+          - Obligatory: Coor,Noun1, Pred
+
+        Items:
+          - E: Noun1
+            Morph: Number=Sing, Gender=Fem
+            ConstituentType: NP
+          - F: Dummy
+            Morph: Number=Sing, Gender=Neut
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, Number=Sing, Gender=Fem
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: nsubj
+
+        Constraints:
+          - Order: B, E
+
+    - SubExample:
+        Name: FN_2
+
+        Participants:
+          - Obligatory: Coor,Noun1, Pred
+
+        Items:
+          - E: Noun1
+            Morph: Number=Sing, Gender=Fem
+            ConstituentType: NP
+          - F: Dummy
+            Morph: Number=Sing, Gender=Neut
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, Number=Sing, Gender=Neut
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: nsubj
+
+        Constraints:
+          - Order: B, E
+
+    - SubExample:
+        Name: NF_1
+
+        Participants:
+          - Obligatory: Coor,Noun1, Pred
+
+        Items:
+          - E: Noun1
+            Morph: Number=Sing, Gender=Neut
+            ConstituentType: NP
+          - F: Dummy
+            Morph: Number=Sing, Gender=Fem
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, Number=Sing, Gender=Neut
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: nsubj
+
+        Constraints:
+          - Order: B, E
+
+    - SubExample:
+        Name: NF_2
+
+        Participants:
+          - Obligatory: Coor,Noun1, Pred
+
+        Items:
+          - E: Noun1
+            Morph: Number=Sing, Gender=Neut
+            ConstituentType: NP
+          - F: Dummy
+            Morph: Number=Sing, Gender=Fem
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, Number=Sing, Gender=Neut
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: nsubj
+
+        Constraints:
+          - Order: B, E

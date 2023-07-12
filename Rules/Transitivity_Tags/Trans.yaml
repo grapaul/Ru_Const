@@ -1,0 +1,15 @@
+# вылавливает непереходные глаголы
+ExampleName: Trans
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: TransVerb
+
+        Participants:
+          - Obligatory: Verb
+
+        Items:
+          - C: Verb
+            Morph: VERB, VerbForm=Fin, tran

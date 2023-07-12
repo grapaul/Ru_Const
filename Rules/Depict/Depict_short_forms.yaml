@@ -1,0 +1,86 @@
+# депиктивы - краткая форма прилагательного
+ExampleName: Depictives_Short_Forms
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: ShF=Head_Su
+
+        Participants:
+          - Obligatory: Depict, Host, Su
+
+        Items:
+          - A: Host
+            Morph: VERB
+#            Lex: стать|становиться|казаться|сделаться|оставаться|остаться
+          - E: Depict
+            Morph: ADJ, Variant=Short
+          - D: Su
+            Morph: Case=Nom
+            ConstituentType: NP
+
+        Links:
+          - A, E: obl
+          - A, D: nsubj
+
+    - SubExample:
+        Name: ShF=NonHead_Su
+
+        Participants:
+          - Obligatory: Depict, Host, Su
+
+        Items:
+          - A: Host
+            Morph: VERB
+#            LexNonHead: стать|становиться|казаться|сделаться|оставаться|остаться
+          - E: Depict
+            Morph: ADJ, Variant=Short
+          - D: Su
+            Morph: Case=Nom
+            ConstituentType: NP
+
+        Links:
+          - A, E: obl
+          - A, D: nsubj
+
+
+    - SubExample:
+        Name: ShF=Head_Obj
+
+        Participants:
+          - Obligatory: Depict, Host, DO
+
+        Items:
+          - A: Host
+            Morph: VERB, tran
+#            Lex: сделать|оставить
+          - E: Depict
+            Morph: ADJ, Variant=Short
+          - D: DO
+            Morph: Case=Acc
+            ConstituentType: NP
+
+        Links:
+          - A, E: obl
+          - A, D: obj
+
+    - SubExample:
+        Name: ShF=NonHead_Obj
+
+        Participants:
+          - Obligatory: Depict, Host, DO
+
+        Items:
+          - A: Host
+            Morph: VERB, tran
+#            LexNonHead: сделать|оставить
+          - E: Depict
+            Morph: ADJ, Variant=Short
+          - D: DO
+            Morph: Case=Acc
+            ConstituentType: NP
+
+        Links:
+          - A, E: obl
+          - A, D: obj

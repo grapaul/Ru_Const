@@ -1,0 +1,29 @@
+ExampleName: Com_Pl_prep
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: Sg-Pl
+
+        Participants:
+          - Obligatory: Noun1, Pred
+
+        Items:
+          - E: Noun1
+            Morph: Number=Sing
+            ConstituentType: NP
+          - F: Dummy
+            ConstituentType: NP
+          - G: Dummy
+            Lex: с|со
+          - B: Pred
+            Morph: VERB, Number=Plur
+
+        Links:
+          - G, F: case
+          - E, G: nmod
+          - B, E: nsubj
+
+        Constraints:
+          - Order: E, B

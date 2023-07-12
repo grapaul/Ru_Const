@@ -1,0 +1,25 @@
+# вылавливает глаголы с субъектом и участниками, не являющимися прямым объектом
+ExampleName: Intrans_Only
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: IntransPredicate
+
+        Participants:
+          - Obligatory: Subject, Verb
+          - Optional: AbsentObject
+
+        Items:
+          - C: Verb
+            Morph: VERB, VerbForm=Fin
+          - D: Subject
+            ConstituentType: NP
+            Morph: Case=Nom
+          - E: AbsentObject
+            ConstituentType: NP|AP|AdvP|PP
+            Morph: NOT => Case=Acc
+
+        Links:
+          - C, D: nsubj

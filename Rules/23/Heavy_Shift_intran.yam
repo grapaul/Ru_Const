@@ -1,0 +1,44 @@
+# красиво танцевать трудно vs. трудно красиво танцевать
+ExampleName: Intrans
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: Prep_intr
+
+        Participants:
+          - Obligatory: Dep, Head
+
+        Items:
+          - E: Head
+            Morph: VERB
+          - G: Dep
+            Morph: VERB, intran
+            ConstituentType: VP
+
+        Links:
+          - E, G: csubj
+
+        Constraints:
+          - Order: G, E
+
+
+    - SubExample:
+        Name: Post_intr
+
+        Participants:
+          - Obligatory: Dep, Head
+
+        Items:
+          - E: Head
+            Morph: VERB
+          - G: Dep
+            Morph: VERB, intran
+            ConstituentType: VP
+
+        Links:
+          - E, G: csubj
+
+        Constraints:
+          - Order: E, G

@@ -1,0 +1,82 @@
+# валентность на вторичный предикат
+ExampleName: Depictives_Valency
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: Val=Head_Su
+
+        Participants:
+          - Obligatory: Depict, Host, Su
+
+        Items:
+          - A: Host
+            Lex: стать|становиться|казаться|сделаться|оставаться|остаться
+          - E: Depict
+            Morph: ADJ|NOUN
+          - D: Su
+            Morph: Case=Nom
+            ConstituentType: NP
+
+        Links:
+          - A, E: obl
+          - A, D: nsubj
+
+    - SubExample:
+        Name: Val=NonHead_Su
+
+        Participants:
+          - Obligatory: Depict, Host, Su
+
+        Items:
+          - A: Host
+            LexNonHead: стать|становиться|казаться|сделаться|оставаться|остаться
+          - E: Depict
+            Morph: ADJ|NOUN
+          - D: Su
+            Morph: Case=Nom
+            ConstituentType: NP
+
+        Links:
+          - A, E: obl
+          - A, D: nsubj
+
+
+    - SubExample:
+        Name: Val=Head_Obj
+
+        Participants:
+          - Obligatory: Depict, Host, DO
+
+        Items:
+          - A: Host
+            Lex: сделать|оставить
+          - E: Depict
+            Morph: ADJ|NOUN
+          - D: DO
+            Morph: Case=Acc
+            ConstituentType: NP
+
+        Links:
+          - A, E: obl
+          - A, D: obj
+
+    - SubExample:
+        Name: Val=NonHead_Obj
+
+        Participants:
+          - Obligatory: Depict, Host, DO
+
+        Items:
+          - A: Host
+            LexNonHead: сделать|оставить
+          - E: Depict
+            Morph: ADJ|NOUN
+          - D: DO
+            Morph: Case=Acc
+            ConstituentType: NP
+
+        Links:
+          - A, E: obl
+          - A, D: obj

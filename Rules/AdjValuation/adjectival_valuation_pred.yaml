@@ -1,0 +1,41 @@
+# вылавливает предикативные оценочные прилагательные из прилагаемого файла
+ExampleName: Adjectival_Valuation
+
+Priority: 4
+
+SubExamples:
+    - SubExample:
+        Name: Not_Pos_Adjective_Pred
+        #4EX: Петя был не умный
+        Participants:
+          - Obligatory: Aspect, Nominal
+
+        Items:
+          - A: Dummy
+            LexNonHead: не
+          - B: Aspect
+            Morph: ADJ
+            List: positive_polarity_list
+          - C: Nominal
+            Morph: NOUN
+
+        Links:
+          - B, A: advmod
+          - B, C: nsubj
+
+    - SubExample:
+      #4EX: качество связи было плохое
+        Name: Neg_Adjective_Pred
+
+        Participants:
+          - Obligatory: Aspect, Noun
+
+        Items:
+          - A: Aspect
+            Morph: ADJ
+            List: negative_polarity_list
+          - B: Noun
+            Morph: NOUN
+
+        Links:
+          - A, B: nsubj

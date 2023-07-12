@@ -1,0 +1,44 @@
+# забыть Ваню трудно vs. трудно забыть Ваню
+ExampleName: Trans_acc
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: Prep_tran
+
+        Participants:
+          - Obligatory: Dep, Head, Obj
+
+        Items:
+          - E: Head
+            Morph: VERB
+          - G: Dep
+            Morph: VERB, tran
+            ConstituentType: VP
+
+        Links:
+          - E, G: csubj_intr
+
+        Constraints:
+          - Order: G, E
+
+
+    - SubExample:
+        Name: Post_tran
+
+        Participants:
+          - Obligatory: Dep, Head, Obj
+
+        Items:
+          - E: Head
+            Morph: VERB
+          - G: Dep
+            Morph: VERB, tran
+            ConstituentType: VP
+
+        Links:
+          - E, G: csubj
+
+        Constraints:
+          - Order: E, G

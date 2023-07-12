@@ -1,0 +1,45 @@
+ExampleName: InTransitivity
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: IntransSing
+
+        Participants:
+          - Obligatory: Subject
+          - Optional: Verb
+
+        Items:
+          - C: Verb
+            ConstituentType: VP
+            Morph: VERB, Number=Sing
+          - D: Subject
+            ConstituentType: NP
+            Morph: Case=Nom, Number=Sing
+
+        Links: 
+          - C,D: nsubj
+
+
+    - SubExample:
+        Name: IntransPlural
+
+        Participants:
+          - Obligatory: Subject
+          - Optional: Verb
+
+        Items:
+          - C: Verb
+            ConstituentType: VP
+            Morph: VERB, Number=Plur
+          - D: Subject
+            ConstituentType: NP
+            Morph: Case=Nom, Number=Plur
+
+        Links: 
+          - C,D: nsubj
+ 
+        Constraints:
+          - Order: D, C
+ 

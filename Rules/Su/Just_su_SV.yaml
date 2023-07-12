@@ -1,0 +1,23 @@
+# препозитивные субъектные ИГ
+ExampleName: SV
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: Prep
+
+        Participants:
+          - Obligatory: Su, Pred
+
+        Items:
+          - E: Su
+            ConstituentType: NP
+          - B: Pred
+            Morph: VERB
+
+        Links:
+          - B, E: nsubj
+
+        Constraints:
+          - Order: E, B

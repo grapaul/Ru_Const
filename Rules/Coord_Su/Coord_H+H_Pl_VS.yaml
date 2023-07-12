@@ -1,0 +1,159 @@
+ExampleName: Coord_Pl_post
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: MF_Pl_post
+
+        Participants:
+          - Obligatory: Coor,Noun1, Pred
+
+        Items:
+          - E: Noun1
+            Morph: Number=Sing, Gender=Masc
+            ConstituentType: NP
+          - F: Dummy
+            Morph: Number=Sing, Gender=Fem
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, Number=Plur, Tense=Past
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: nsubj
+
+        Constraints:
+          - Order: B, E
+
+
+    - SubExample:
+        Name: FM_Pl_post
+
+        Participants:
+          - Obligatory: Coor,Noun1, Pred
+
+        Items:
+          - E: Noun1
+            Morph: Number=Sing, Gender=Fem
+            ConstituentType: NP
+          - F: Dummy
+            Morph: Number=Sing, Gender=Masc
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, Number=Plur, Tense=Past
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: nsubj
+
+        Constraints:
+          - Order: B, E
+
+
+    - SubExample:
+        Name: NM_Pl_post
+
+        Participants:
+          - Obligatory: Coor,Noun1, Pred
+
+        Items:
+          - E: Noun1
+            Morph: Number=Sing, Gender=Neut
+            ConstituentType: NP
+          - F: Dummy
+            Morph: Number=Sing, Gender=Masc
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, Number=Plur, Tense=Past
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: nsubj
+
+        Constraints:
+          - Order: B, E
+
+
+    - SubExample:
+        Name: MN_Pl_post
+
+        Participants:
+          - Obligatory: Coor,Noun1, Pred
+
+        Items:
+          - E: Noun1
+            Morph: Number=Sing, Gender=Masc
+            ConstituentType: NP
+          - F: Dummy
+            Morph: Number=Sing, Gender=Neut
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, Number=Plur, Tense=Past
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: nsubj
+
+        Constraints:
+          - Order: B, E
+
+
+    - SubExample:
+        Name: FN_Pl_post
+
+        Participants:
+          - Obligatory: Coor,Noun1, Pred
+
+        Items:
+          - E: Noun1
+            Morph: Number=Sing, Gender=Fem
+            ConstituentType: NP
+          - F: Dummy
+            Morph: Number=Sing, Gender=Neut
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, Number=Plur, Tense=Past
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: nsubj
+
+        Constraints:
+          - Order: B, E
+
+
+    - SubExample:
+        Name: NF_Pl_post
+
+        Participants:
+          - Obligatory: Coor,Noun1, Pred
+
+        Items:
+          - E: Noun1
+            Morph: Number=Sing, Gender=Neut
+            ConstituentType: NP
+          - F: Dummy
+            Morph: Number=Sing, Gender=Fem
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, Number=Plur, Tense=Past
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: nsubj
+
+        Constraints:
+          - Order: B, E

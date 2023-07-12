@@ -1,0 +1,19 @@
+ExampleName: SuFirst
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: Noun
+
+        Participants:
+          - Obligatory: Subject, Verb
+
+        Items:
+          - C: Verb
+            Morph: VERB
+
+          - D: Subject
+#            ConstituentType: NP
+            Morph: NOUN
+
