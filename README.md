@@ -1,15 +1,26 @@
+###### Ru_Const
+
+- Корпус с разметкой по связям, составляющим, морфологии и т.п. (получен на данных Lenta.ru)
+- Поиск по корпусу осуществляется при помощи прилагаемого скрипта, см. ниже
+- Первая версия поискового скрипта была написана при участии [Ильи Козиева](https://github.com/Koziev)
+
+### Копирование поискового скрипта и датасета с корпусом
+
+1. Скачиваем архив или клонируем данный репозиторий - он содержит поисковые скрипты и примеры правил
+
+2. Загружаем и распаковываем архив с данными корпуса [отсюда](https://disk.yandex.ru/d/TamirmJ-ZP1fVg)
 
 ### Настройка скрипта для извлечения примеров (Ex_Extractor):
 
 ### Запуск
 
-Из корневой папки с файлом ex_extractor_X.X.py
+Из корневой папки с файлом EX_tractor_N.N.py
 ```
-python3 ex_extractor_1.3.py
+python3 EX_tractor_1.3.py
 ```
 Параметры задают место расположения правил (--rules по умолчанию: Rules/23), директорию с текущими примера в формате json (--dir_in, по умолчанию: Input/main), файл с текстовым результатом (--output_txt, по умолчанию: Output/search_result.txt), файл с результатом в csv (--output_csv, по умолчанию: Output/search_result.csv), выдачу текстового (--verbosity) и csv (--csv_verbosity) файлов (по умолчанию оба 1)
 ```
-usage: ex_extractor_1.3.py [-h] [--rules RULES] [--dir_in DIR_IN] [--output_txt OUTPUT_TXT]
+usage: EX_tractor_1.3.py [-h] [--rules RULES] [--dir_in DIR_IN] [--output_txt OUTPUT_TXT]
                            [--verbosity VERBOSITY] [--output_csv OUTPUT_CSV]
                            [--csv_verbosity CSV_VERBOSITY]
 ```
@@ -18,7 +29,7 @@ usage: ex_extractor_1.3.py [-h] [--rules RULES] [--dir_in DIR_IN] [--output_txt 
 
 ## Пример запуска
 ```
-...#Sandbox% python3 ex_extractor_1.3.py --dir_in Input_ --csv_verbosity 0  --rules
+...#Sandbox% python3 EX_tractor_1.3.py --dir_in Input_ --csv_verbosity 0  --rules
 
 ```
 Запуск с поиском по папке Input_ (куда можно положить подкорпус для какого-либо эксперимента) и без выдачи csv
