@@ -610,7 +610,10 @@ if __name__ == '__main__':
 	if verbosity:
 		print('Loading rules from "{}"'.format(rules_dir))
 
-	for fpath in pathlib.Path(rules_dir).rglob('*.yaml'):
+	rul_dir_p = os.path.join(os.getcwd(), 'Rules', rules_dir)
+	for fl in os.listdir(rul_dir_p): # перебираем файлы с примерами
+		fpath = os.path.join(rul_dir_p, fl)
+
 		try:
 			with open(fpath, 'r', encoding='utf-8') as f:
 				data = yaml.safe_load(f)
