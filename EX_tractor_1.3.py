@@ -610,7 +610,7 @@ if __name__ == '__main__':
 	if verbosity:
 		print('Loading rules from "{}"'.format(rules_dir))
 
-	rul_dir_p = os.path.join(os.getcwd(), 'Rules', rules_dir)
+	rul_dir_p = os.path.join(os.getcwd(), rules_dir)
 	for fl in os.listdir(rul_dir_p): # перебираем файлы с примерами
 		fpath = os.path.join(rul_dir_p, fl)
 
