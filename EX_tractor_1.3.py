@@ -587,7 +587,7 @@ def compareConstitTypes(rule_elem, data_elem):
 
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser(description='Example extractor')
-	parser.add_argument('--rules', type=str, default='Rules/23', help='directory with rules')
+	parser.add_argument('--rules', type=str, default='23', help='directory with rules')
 	parser.add_argument('--dir_in', type=str, default='Input/main', help='corpora files')
 	parser.add_argument('--output_txt', type=str, default='Output/search_result.txt', help='example extraction results text')
 	parser.add_argument('--verbosity', type=int, default=1, help='print messages')
@@ -610,7 +610,7 @@ if __name__ == '__main__':
 	if verbosity:
 		print('Loading rules from "{}"'.format(rules_dir))
 
-	rul_dir_p = os.path.join(os.getcwd(), rules_dir)
+	rul_dir_p = os.path.join(os.getcwd(), 'Rules', rules_dir)
 	for fl in os.listdir(rul_dir_p): # перебираем файлы с примерами
 		fpath = os.path.join(rul_dir_p, fl)
 
