@@ -1,0 +1,38 @@
+# вылавливает депиктивы
+ExampleName: Depictives_All
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: NP
+
+        Participants:
+          - Obligatory: Depict, Host
+
+        Items:
+          - A: Host
+            Morph: VERB
+          - E: Depict
+            ConstituentType: NP
+            Morph: NOUN
+
+        Links:
+          - A, E: xcomp
+
+SubExamples:
+    - SubExample:
+        Name: AP
+
+        Participants:
+          - Obligatory: Depict, Host
+
+        Items:
+          - A: Host
+            Morph: VERB
+          - E: Depict
+            ConstituentType: AP
+            Morph: ADJ
+
+        Links:
+          - A, E: obl

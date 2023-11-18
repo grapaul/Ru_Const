@@ -1,0 +1,41 @@
+# вылавливает атрибутивные оценочные прилагательные из прилагаемого файла
+ExampleName: Adjectival_Valuation
+
+Priority: 4
+
+SubExamples:
+    - SubExample:
+        Name: Not_Pos_Adjective_Attr
+        #4EX: не умный мальчик
+        Participants:
+          - Obligatory: Aspect, Nominal
+
+        Items:
+          - A: Dummy
+            LexNonHead: не
+          - B: Aspect
+            Morph: ADJ
+            List: positive_polarity_list
+          - C: Nominal
+            Morph: NOUN
+
+        Links:
+          - B, A: advmod
+          - C, B: amod
+
+    - SubExample:
+      #4EX: плохое качество связи
+        Name: Neg_Adjective_Attr
+
+        Participants:
+          - Obligatory: Aspect, Noun
+
+        Items:
+          - A: Aspect
+            Morph: ADJ
+            List: negative_polarity_list
+          - B: Noun
+            Morph: NOUN
+
+        Links:
+          - B, A: amod

@@ -1,0 +1,24 @@
+# вылавливает деепричастия с неноминативным субъектом (это могут быть и слова латиницей, у которых не падеж не определяется)
+ExampleName: NonNomConv
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: NoNom
+
+        Participants:
+          - Obligatory: Su, Matrix, Conv
+
+        Items:
+          - A: Matrix
+            Morph: VERB, VerbForm=Fin
+          - E: Su
+            ConstituentType: NP
+            Morph: NOT => Case=Nom
+          - B: Conv
+            Morph: VERB, VerbForm=Conv
+
+        Links:
+          - A, B: advcl
+          - A, E: nsubj

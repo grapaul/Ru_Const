@@ -1,0 +1,60 @@
+# решили книги читать
+ExampleName: 3P_Pl_Trans
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: Pres
+
+        Participants:
+          - Obligatory: Verb, S
+
+        Items:
+          - A: S
+            Morph: NOUN, Number=Plur, Case=Nom
+            ConstituentType: NP
+
+#          - B: D
+#            Morph: NOT => Case=Acc
+#            ConstituentType: NP
+
+          - C: Verb
+            Morph: VERB, VerbForm=Fin, tran, Person=3, Number=Plur, Tense=Pres
+
+        Links:
+          - C, A: nsubj
+
+    - SubExample:
+        Name: Fut
+
+        Participants:
+          - Obligatory: Verb, S
+
+        Items:
+          - A: S
+            Morph: NOUN, Number=Plur, Case=Nom
+            ConstituentType: NP
+
+          - C: Verb
+            Morph: VERB, VerbForm=Fin, tran, Person=3, Number=Plur, Tense=Fut
+
+        Links:
+          - C, A: nsubj
+
+    - SubExample:
+        Name: Past
+
+        Participants:
+          - Obligatory: Verb, S
+
+        Items:
+          - A: S
+            Morph: NOUN, Number=Plur, Case=Nom
+            ConstituentType: NP
+
+          - C: Verb
+            Morph: VERB, VerbForm=Fin, tran, Number=Plur, Tense=Past
+
+        Links:
+          - C, A: nsubj

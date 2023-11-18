@@ -1,0 +1,44 @@
+# весьма интересное кино vs. кино, интересное лишь актерами
+ExampleName: Adjectival_Phrase
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: Prep
+
+        Participants:
+          - Obligatory: Dep, Head
+
+        Items:
+          - E: Head
+            Morph: NOUN
+          - G: Dep
+            Morph: ADJ
+            ConstituentType: AP
+
+        Links:
+          - E, G: amod
+
+        Constraints:
+          - Order: G, E
+
+
+    - SubExample:
+        Name: Post
+
+        Participants:
+          - Obligatory: Dep, Head
+
+        Items:
+          - E: Head
+            Morph: NOUN
+          - G: Dep
+            Morph: ADJ
+            ConstituentType: AP
+
+        Links:
+          - E, G: amod
+
+        Constraints:
+          - Order: E, G

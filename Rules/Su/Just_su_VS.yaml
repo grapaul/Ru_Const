@@ -1,0 +1,23 @@
+# постпозитивные субъектные ИГ
+ExampleName: VS
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: Postp
+
+        Participants:
+          - Obligatory: Su, Pred
+
+        Items:
+          - E: Su
+            ConstituentType: NP
+          - B: Pred
+            Morph: VERB
+
+        Links:
+          - B, E: nsubj
+
+        Constraints:
+          - Order: B, E

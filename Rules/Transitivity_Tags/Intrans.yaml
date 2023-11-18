@@ -1,0 +1,15 @@
+# вылавливает непереходные глаголы
+ExampleName: Intrans
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: IntransVerb
+
+        Participants:
+          - Obligatory: Verb
+
+        Items:
+          - C: Verb
+            Morph: VERB, VerbForm=Fin, intran

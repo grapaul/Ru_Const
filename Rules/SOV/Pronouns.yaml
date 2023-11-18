@@ -1,0 +1,166 @@
+# решили книги читать
+ExampleName: Clause_WO_Pronouns
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: SVO
+
+        Participants:
+          - Obligatory: Verb, S, O
+
+        Items:
+          - A: S
+            Morph: PRON, Case=Nom
+            ConstituentType: NP
+
+          - B: O
+            Morph: PRON, Case=Acc
+            ConstituentType: NP
+
+          - C: Verb
+            Morph: VERB, VerbForm=Fin
+
+        Links:
+          - C, A: nsubj
+          - C, B: obj
+
+        Constraints:
+          - Order: A, C
+          - Order: C, B
+
+
+    - SubExample:
+        Name: OVS
+
+        Participants:
+          - Obligatory: Verb, S, O
+
+        Items:
+          - A: S
+            Morph: PRON, Case=Nom
+            ConstituentType: NP
+
+          - B: O
+            Morph: PRON, Case=Acc
+            ConstituentType: NP
+
+          - C: Verb
+            Morph: VERB, VerbForm=Fin
+
+        Links:
+          - C, A: nsubj
+          - C, B: obj
+
+        Constraints:
+          - Order: B, C
+          - Order: C, A
+
+
+    - SubExample:
+        Name: SOV
+
+        Participants:
+          - Obligatory: Verb, S, O
+
+        Items:
+          - A: S
+            Morph: PRON, Case=Nom
+            ConstituentType: NP
+
+          - B: O
+            Morph: PRON, Case=Acc
+            ConstituentType: NP
+
+          - C: Verb
+            Morph: VERB, VerbForm=Fin
+
+        Links:
+          - C, A: nsubj
+          - C, B: obj
+
+        Constraints:
+          - Order: A, B
+          - Order: B, C
+
+
+    - SubExample:
+        Name: OSV
+
+        Participants:
+          - Obligatory: Verb, S, O
+
+        Items:
+          - A: S
+            Morph: PRON, Case=Nom
+            ConstituentType: NP
+
+          - B: O
+            Morph: PRON, Case=Acc
+            ConstituentType: NP
+
+          - C: Verb
+            Morph: VERB, VerbForm=Fin
+
+        Links:
+          - C, A: nsubj
+          - C, B: obj
+
+        Constraints:
+          - Order: B, A
+          - Order: A, C
+
+
+    - SubExample:
+        Name: VOS
+
+        Participants:
+          - Obligatory: Verb, S, O
+
+        Items:
+          - A: S
+            Morph: PRON, Case=Nom
+            ConstituentType: NP
+
+          - B: O
+            Morph: PRON, Case=Acc
+            ConstituentType: NP
+
+          - C: Verb
+            Morph: VERB, VerbForm=Fin
+
+        Links:
+          - C, A: nsubj
+          - C, B: obj
+
+        Constraints:
+          - Order: C, B
+          - Order: B, A
+
+
+    - SubExample:
+        Name: VSO
+
+        Participants:
+          - Obligatory: Verb, S, O
+
+        Items:
+          - A: S
+            Morph: PRON, Case=Nom
+            ConstituentType: NP
+
+          - B: O
+            Morph: PRON, Case=Acc
+            ConstituentType: NP
+
+          - C: Verb
+            Morph: VERB, VerbForm=Fin
+
+        Links:
+          - C, A: nsubj
+          - C, B: obj
+
+        Constraints:
+          - Order: C, A
+          - Order: A, B
