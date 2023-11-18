@@ -1,0 +1,26 @@
+ExampleName: VP
+
+Priority: 1
+
+SubExamples:
+
+    - SubExample:
+        Name: VP
+
+        Participants:
+          - Obligatory: Coor, Verb1, Verb2
+
+        Items:
+          - E: Verb1
+            Morph: VERB
+            ConstituentType: VP
+          - F: Verb2
+            Morph: VERB
+            ConstituentType: VP
+          - G: Coor
+            LexNonHead: и
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+

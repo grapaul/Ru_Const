@@ -1,0 +1,39 @@
+# весьма интересное кино vs. кино, весьма интересное
+ExampleName: Attributives
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: Prep
+
+        Participants:
+          - Obligatory: Dep, Head
+
+        Items:
+          - E: Head
+            Morph: NOUN
+          - G: Dep
+
+        Links:
+          - E, G: amod
+
+        Constraints:
+          - Order: G, E
+
+    - SubExample:
+        Name: Post
+
+        Participants:
+          - Obligatory: Dep, Head
+
+        Items:
+          - E: Head
+            Morph: NOUN
+          - G: Dep
+
+        Links:
+          - E, G: amod
+
+        Constraints:
+          - Order: E, G

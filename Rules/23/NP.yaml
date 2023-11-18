@@ -1,0 +1,75 @@
+ExampleName: NP
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: NP_Su
+
+        Participants:
+          - Obligatory: Coor, Noun1, Noun2, Pred
+
+        Items:
+          - E: Noun1
+            Morph: NOUN
+            ConstituentType: NP
+          - F: Noun2
+            Morph: NOUN
+            ConstituentType: NP
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, VerbForm=Fin
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: nsubj
+
+    - SubExample:
+        Name: NP_DO
+
+        Participants:
+          - Obligatory: Coor, Noun1, Noun2, Pred
+
+        Items:
+          - E: Noun1
+            Morph: NOUN
+            ConstituentType: NP
+          - F: Noun2
+            Morph: NOUN
+            ConstituentType: NP
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, VerbForm=Fin
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: obj
+
+
+    - SubExample:
+        Name: NP_IO
+
+        Participants:
+          - Obligatory: Coor, Noun1, Noun2, Pred
+
+        Items:
+          - E: Noun1
+            Morph: NOUN
+            ConstituentType: NP
+          - F: Noun2
+            Morph: NOUN
+            ConstituentType: NP
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, VerbForm=Fin
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, E: iobj
+

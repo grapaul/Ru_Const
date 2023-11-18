@@ -1,0 +1,43 @@
+# ее дом / дом этой девушки
+ExampleName: Possessivity
+
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: Prepos
+
+        Participants:
+          - Obligatory: Possessor, Possessee
+
+        Items:
+          - A: Possessee
+            Morph: NOUN
+          - B: Possessor
+            ConstituentType: NP
+            Morph: Case=Gen
+
+        Links:
+          - A,B: nmod
+
+        Constraints:
+          - Order: B, A
+
+    - SubExample:
+        Name: Postpos
+
+        Participants:
+          - Obligatory: Possessor, Possessee
+
+        Items:
+          - A: Possessee
+            Morph: NOUN
+          - B: Possessor
+            ConstituentType: NP
+            Morph: Case=Gen
+
+        Links:
+          - A,B: nmod
+
+        Constraints:
+          - Order: A, B

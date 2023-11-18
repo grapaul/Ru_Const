@@ -1,0 +1,31 @@
+ExampleName: PP
+
+Priority: 1
+
+SubExamples:
+
+    - SubExample:
+        Name: NP_P
+
+        Participants:
+          - Obligatory: Coor, Noun1, Noun2, Pred, Prep
+
+        Items:
+          - E: Noun1
+            Morph: NOUN
+            ConstituentType: NP
+          - F: Noun2
+            Morph: NOUN
+            ConstituentType: NP
+          - G: Coor
+            LexNonHead: и
+          - B: Pred
+            Morph: VERB, VerbForm=Fin
+          - H: Prep
+            Morph: ADP
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+          - B, H: any
+          - H, E: case

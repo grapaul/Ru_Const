@@ -1,0 +1,42 @@
+ExampleName: A
+
+Priority: 1
+
+SubExamples:
+
+    - SubExample:
+        Name: Adj
+
+        Participants:
+          - Obligatory: Coor, Adj1, Adj2
+
+        Items:
+          - E: Adj1
+            Morph: ADJ
+          - F: Adj2
+            Morph: ADJ
+          - G: Coor
+            LexNonHead: и
+
+        Links:
+          - E, F: conj
+          - F, G: cc
+
+
+    - SubExample:
+        Name: Adv
+
+        Participants:
+          - Obligatory: Coor, Adv1, Adv2
+
+        Items:
+          - E: Adv1
+            Morph: ADV
+          - F: Adv2
+            Morph: ADV
+          - G: Coor
+            LexNonHead: и
+
+        Links:
+          - E, F: conj
+          - F, G: cc
