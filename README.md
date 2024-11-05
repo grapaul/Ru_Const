@@ -35,7 +35,7 @@ usage: EX_tractor_1.3.py [-h] [--rules RULES] [--dir_in DIR_IN] [--output_txt OU
 
 #### Пример запуска
 ```
-...#Sandbox% python3 EX_tractor_1.3.py --dir_in Input_ --rules 23
+...#Sandbox% python3 EX_tractor_1.3.py --dir_in Input_ --rules 24
 
 ```
 Запуск с поиском по папке Input_ (куда можно положить подкорпус для какого-либо эксперимента), правила будут браться из директории 'Rules/23/' (она же установлена по умолчанию)
