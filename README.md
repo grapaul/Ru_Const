@@ -21,10 +21,9 @@
 Из корневой папки с файлом EX_tractor_N.N.py
 ```
 python3 EX_tractor_1.3.py
-
+```
 После этого необходимо дождаться, пока будут загружены все данные корпуса.
 
-```
 В поисковом запросе необходимо задать параметры. Параметры задают место расположения правил (--rules по умолчанию: Rules/23), директорию с текущими примера в формате json (--dir_in, по умолчанию: Input/main), файл с текстовым результатом (--output_txt, по умолчанию: Output/search_result.txt), файл с результатом в csv (--output_csv, по умолчанию: Output/search_result.csv), выдачу текстового (--verbosity) и csv (--csv_verbosity) файлов (по умолчанию оба 1)
 ```
 usage: EX_tractor_1.3.py [-h] [--rules RULES] [--dir_in DIR_IN] [--output_txt OUTPUT_TXT]
