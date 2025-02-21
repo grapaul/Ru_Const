@@ -214,3 +214,7 @@ Lex: мочь|смочь
 ```
 Morph: NOT => Case=Nom
 ```
+
+
+ [telegram](@PavelGras)
+ [статья для ссылки на корпус](https://vestnik.philol.msu.ru/issues/VMU_9_Philol__2024_03_7.pdf)
