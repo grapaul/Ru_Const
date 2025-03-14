@@ -1,5 +1,5 @@
 
-# Ru_Const
+# Ru_Const [видеоописание](http://d.gpmdata.ru/10A84ac/L8opxaw4b1aeq0qon5ML8ExHE6r_k4iaZNGQzaSquTR_PRZAHIwaA7CPKsmMiFon1MXuxeo5XYB-AstQpOluknkmuwDgralaL40jwel63lYqfw__CoXj3T6IUJNRWng0KJT2AEzv4otx7e-IQo1RXe44Tio6jzFdUYbELVh_ipMHHkNwKvUvLGCjp8C4dXAREIyuaNcQiI8k8nl3TwhyAWadUn4QfxsQZzaXbd1mrf6vP-3LxB4OPWOFwdg9mBLDhJEFp74PjPo)
 
 - Корпус с разметкой по связям, составляющим, морфологии и т.п.
 - Корпус получен на данных Lenta.ru, для каждого примера доступна ссылка на оригинал в интернете
