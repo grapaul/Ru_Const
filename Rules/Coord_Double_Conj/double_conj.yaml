@@ -1,0 +1,23 @@
+ExampleName: DOUBLE_CONJ
+Priority: 1
+
+SubExamples:
+
+    - SubExample:
+        Name: Double_C
+
+        Participants:
+          - Obligatory: Conj1, N1, N2
+
+        Items:
+          - X: Conj1
+            LexNonHead: и|или|либо
+          - E: N1
+            Morph: NOUN
+          - F: N2
+            Morph: NOUN
+
+        Links:
+          - E, X: cc
+          - E, F: conj
+
