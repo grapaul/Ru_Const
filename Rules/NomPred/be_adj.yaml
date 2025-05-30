@@ -1,0 +1,40 @@
+ExampleName: AdjPred
+Priority: 1
+
+SubExamples:
+    - SubExample:
+        Name: AdjIns
+
+        Participants:
+          - Obligatory: Depict, Byt, Su
+
+        Items:
+          - A: Byt
+            Lex: быть
+          - E: Depict
+            Morph: ADJ, Case=Ins
+          - S: Su
+            ConstituentType: NP
+
+        Links:
+          - E, S: nsubj
+          - A, E: cop
+
+    - SubExample:
+        Name: AdjNom
+
+        Participants:
+          - Obligatory: Depict, Byt, Su
+
+        Items:
+          - A: Byt
+            Lex: быть
+          - E: Depict
+            Morph: ADJ, Case=Nom
+          - S: Su
+            ConstituentType: NP
+
+        Links:
+          - E, S: nsubj
+          - A, E: cop
+
