@@ -1,0 +1,49 @@
+ExampleName: RC
+Priority: 1
+
+SubExamples:
+
+    - SubExample:
+        Name: Kotor
+
+        Participants:
+          - Obligatory: Kotor, NP, Verb
+
+        Items:
+          - E: Kotor
+            LexNonHead: который
+          - S: NP
+            ConstituentType: NP
+          - V: Verb
+            Morph: VerbForm=Fin
+
+        Links:
+          - V, E: any
+          - S, V: acl:relcl
+
+        Constraints:
+          - Order: S, E
+
+    - SubExample:
+        Name: Wh
+
+        Participants:
+          - Obligatory: Wh, NP, Verb
+
+        Items:
+          - E: Wh
+            LexNonHead: кто|что|где|когда|куда|откуда
+          - S: NP
+            ConstituentType: NP
+          - V: Verb
+            Morph: VerbForm=Fin
+
+        Links:
+          - V, E: any
+          - S, V: acl:relcl
+
+        Constraints:
+          - Order: S, E
+
+
+
