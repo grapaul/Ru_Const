@@ -1,5 +1,6 @@
 import io
 import os
+import re
 import yaml
 import json
 import pathlib
@@ -73,6 +74,11 @@ class SubexampleItem:
 		self.slot_name = None
 		self.Lex = None
 		self.LexNonHead = None
+		self.Wordform = None
+		self.WordformNonHead = None
+		self.RussianLex = None
+		self.RussianLexNonHead = None
+		self.RussianWordform = None
 		self.ConstituentType = None
 		self.Morph = None
 		self.Orth = None
@@ -104,6 +110,41 @@ class SubexampleItem:
 			with io.open(fname, 'r', encoding='utf-8') as rdr:
 				self.LexNonHead = [line.strip() for line in rdr]
 
+		if 'Wordform' in yaml_data:
+			self.Wordform = [lex.strip() for lex in yaml_data['Wordform'].split('|')]
+		elif 'ListWordform' in yaml_data:
+			fname = os.path.join(dirname, yaml_data['ListWordform'] + '.txt')
+			with io.open(fname, 'r', encoding='utf-8') as rdr:
+				self.Wordform = [line.strip() for line in rdr]
+
+		if 'WordformNonHead' in yaml_data:
+			self.WordformNonHead = [lex.strip() for lex in yaml_data['WordformNonHead'].split('|')]
+		elif 'ListWordformNonHead' in yaml_data:
+			fname = os.path.join(dirname, yaml_data['ListWordformNonHead'] + '.txt')
+			with io.open(fname, 'r', encoding='utf-8') as rdr:
+				self.WordformNonHead = [line.strip() for line in rdr]
+
+		if 'RussianLex' in yaml_data:
+			self.RussianLex = [lex.strip() for lex in yaml_data['RussianLex'].split('|')]
+		elif 'ListRussianLex' in yaml_data:
+			fname = os.path.join(dirname, yaml_data['ListRussianLex'] + '.txt')
+			with io.open(fname, 'r', encoding='utf-8') as rdr:
+				self.RussianLex = [line.strip() for line in rdr]
+
+		if 'RussianLexNonHead' in yaml_data:
+			self.RussianLexNonHead = [lex.strip() for lex in yaml_data['RussianLexNonHead'].split('|')]
+		elif 'ListRussianLexNonHead' in yaml_data:
+			fname = os.path.join(dirname, yaml_data['ListRussianLexNonHead'] + '.txt')
+			with io.open(fname, 'r', encoding='utf-8') as rdr:
+				self.RussianLexNonHead = [line.strip() for line in rdr]
+
+		if 'RussianWordform' in yaml_data:
+			self.RussianWordform = [lex.strip() for lex in yaml_data['RussianWordform'].split('|')]
+		elif 'ListRussianWordform' in yaml_data:
+			fname = os.path.join(dirname, yaml_data['ListRussianWordform'] + '.txt')
+			with io.open(fname, 'r', encoding='utf-8') as rdr:
+				self.RussianWordform = [line.strip() for line in rdr]
+		
 		if 'ConstituentType' in yaml_data:
 			self.ConstituentType = [s.strip() for s in yaml_data['ConstituentType'].split('|')]
 
@@ -200,7 +241,6 @@ class SubExampleRule:
 					if elem.participant not in matched_pairs:
 						#if elem.Lex or elem.LexNonHead or elem.ConstituentType or elem.Orth or elem.Morph:
 						compareTags(elem, parser_data, elem.participant, elem.slot_name, matched_pairs)
-
 		# если не извлечен какой-то из обязательных участников, то
 		# считаем, что правило вообще не сработало.
 		all_oblig_matched = True
@@ -552,6 +592,134 @@ def compareTags(rule_elem, data_elem, participant, slot_name, matched_pairs):
 			if (elem == data_elem['tokens'][-1]) and not flag:
 				#print('лемма из правила не найдена или is_head не совпало с тегом Lex/LexNonHead')
 				pass
+
+	elif rule_elem.Wordform:
+		for elem in data_elem['tokens']:
+			if elem['itoken'] not in [t.token_index for t in itertools.chain(*matched_pairs.values())]:
+				#print(elem['lemma'])
+				if elem['token'] in rule_elem.Wordform:
+					if 'constituent' in elem and elem['constituent']['is_head'] is True:  # and ('LexNonHead' in rule_elem):
+						if compareConstitTypes(rule_elem, elem):
+							#print("лемма и тип сост совпали",)
+							if compareMorphTags(rule_elem, elem):
+								#print("морф теги совпали")
+								if checkOrth(rule_elem, elem):
+									tm = TokenMatching()
+									tm.slot_name = slot_name
+									tm.token_index = elem['itoken']
+									tm.token = elem
+									tm.constituent = elem['constituent']
+
+									if participant in matched_pairs:
+										matched_pairs[participant].append(tm)
+									else:
+										matched_pairs[participant] = [tm]
+
+			if (elem == data_elem['tokens'][-1]) and not flag:
+				#print('лемма из правила не найдена или is_head не совпало с тегом Lex/LexNonHead')
+				pass
+
+	elif rule_elem.WordformNonHead:
+		for elem in data_elem['tokens']:
+			if elem['itoken'] not in [t.token_index for t in itertools.chain(*matched_pairs.values())]:
+				#print(elem['lemma'])
+				if elem['token'] in rule_elem.WordformNonHead:
+					if 'constituent' in elem and elem['constituent']['is_head'] is False:  # and ('LexNonHead' in rule_elem):
+						if compareConstitTypes(rule_elem, elem):
+							#print("лемма и тип сост совпали",)
+							if compareMorphTags(rule_elem, elem):
+								#print("морф теги совпали")
+								if checkOrth(rule_elem, elem):
+									tm = TokenMatching()
+									tm.slot_name = slot_name
+									tm.token_index = elem['itoken']
+									tm.token = elem
+									tm.constituent = elem['constituent']
+
+									if participant in matched_pairs:
+										matched_pairs[participant].append(tm)
+									else:
+										matched_pairs[participant] = [tm]
+
+			if (elem == data_elem['tokens'][-1]) and not flag:
+				#print('лемма из правила не найдена или is_head не совпало с тегом Lex/LexNonHead')
+				pass
+
+	elif rule_elem.RussianLex:
+		for elem in data_elem['tokens']:
+			if elem['itoken'] not in [t.token_index for t in itertools.chain(*matched_pairs.values())]:
+				#print(elem['lemma'])
+				if elem['translation'] in rule_elem.RussianLex:
+					if 'constituent' in elem and elem['constituent']['is_head'] is True:  # and ('LexNonHead' in rule_elem):
+						if compareConstitTypes(rule_elem, elem):
+							#print("лемма и тип сост совпали",)
+							if compareMorphTags(rule_elem, elem):
+								#print("морф теги совпали")
+								if checkOrth(rule_elem, elem):
+									tm = TokenMatching()
+									tm.slot_name = slot_name
+									tm.token_index = elem['itoken']
+									tm.token = elem
+									tm.constituent = elem['constituent']
+
+									if participant in matched_pairs:
+										matched_pairs[participant].append(tm)
+									else:
+										matched_pairs[participant] = [tm]
+
+			if (elem == data_elem['tokens'][-1]) and not flag:
+				#print('лемма из правила не найдена или is_head не совпало с тегом Lex/LexNonHead')
+				pass
+
+	elif rule_elem.RussianLexNonHead:
+		for elem in data_elem['tokens']:
+			if elem['itoken'] not in [t.token_index for t in itertools.chain(*matched_pairs.values())]:
+				#print(elem['lemma'])
+				if elem['translation'] in rule_elem.RussianLexNonHead:
+					if 'constituent' in elem and elem['constituent']['is_head'] is False:  # and ('LexNonHead' in rule_elem):
+						if compareConstitTypes(rule_elem, elem):
+							#print("лемма и тип сост совпали",)
+							if compareMorphTags(rule_elem, elem):
+								#print("морф теги совпали")
+								if checkOrth(rule_elem, elem):
+									tm = TokenMatching()
+									tm.slot_name = slot_name
+									tm.token_index = elem['itoken']
+									tm.token = elem
+									tm.constituent = elem['constituent']
+
+									if participant in matched_pairs:
+										matched_pairs[participant].append(tm)
+									else:
+										matched_pairs[participant] = [tm]
+
+			if (elem == data_elem['tokens'][-1]) and not flag:
+				#print('лемма из правила не найдена или is_head не совпало с тегом Lex/LexNonHead')
+				pass
+
+	elif rule_elem.RussianWordform:
+			common_words = set([x.lower() for x in re.split(r"[\s.,;:-]+", data_elem['russian_text'])]) & set(rule_elem.RussianWordform)
+			if common_words:
+					flag = True
+					index = 1
+					for common_word in common_words:
+						tm = TokenMatching()
+						tm.slot_name = slot_name
+						tm.token_index = index
+						tm.token = {"itoken": index, "token": common_word, "lemma": common_word, "tagsets": [["None", "-"]], "parent_token_index": "-", "edge_type": "-", "constituent": {"name": "-", "is_head": "-", "id": "-"}, "translation": "None"}
+						tm.constituent = {"name": "-", "is_head": "-", "id": "-"}
+						index += 1
+
+						if participant in matched_pairs:
+							matched_pairs[participant].append(tm)
+						else:
+							matched_pairs[participant] = [tm]
+
+			if not flag:
+				#print('лемма из правила не найдена или is_head не совпало с тегом Lex/LexNonHead')
+				pass
+
+
 	else:
 		# аналогичная ситуация, когда леммы нет в правиле
 		for elem in data_elem['tokens']:
@@ -680,9 +848,8 @@ if __name__ == '__main__':
 				if slots:
 					if verbosity:
 						f_out.write(
-							'=>Найден пример {} номер {} типа {} с текстом \n{}\n\t=>из предложения #{} \n\t{}\n'.format(
-								eexample.get_example_name(), ex_id, eexample.get_subexample_name(), sent_data['text'],
-								sent_data['id'], sent_data['sentence_tree']))
+							'=>Найден пример {} номер {} типа {} с текстом \n{}\n{}\n\t=>из предложения #{} \n\t{}\n'.format(
+								eexample.get_example_name(), ex_id, eexample.get_subexample_name(), sent_data['text'], sent_data['russian_text'], sent_data['id'], sent_data['sentence_tree']))
 						examples_number.add(sent_data['id'])
 
 						print('Слоты:')
